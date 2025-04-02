@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi página de noticias</title>
+</head>
+<body>
+    <h1>Bienvenido a mi página de noticias</h1>
+
+    <div id="contenido">
+        </div>
+
+    <script>
+        // Aquí puedes agregar código JavaScript para mostrar tu contenido dinámicamente
+    </script>
+</body>
+</html>
