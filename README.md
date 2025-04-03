@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mi página de noticias</title>
+    <title>Todo lo que pueda interesarte aquí</title>
     <style>
         body {
             font-family: sans-serif;
@@ -36,15 +36,15 @@
 </head>
 <body>
     <header>
-        <h1>Mi página de noticias miamortati</h1>
+        <h1>Todo lo que pueda interesarte aquí</h1>
     </header>
 
     <div id="contenido">
         <div class="noticia">
             <h2>Nueva noticia</h2>
             <p>Esta es una noticia importante que quiero compartir con ustedes.</p>
-            <img src="imagenes/imagen-de-la-noticia.jpg" alt="Imagen de la noticia">
-            <a href="documento.pdf">Descargar documento</a>
+        
+            <ahttps://enperspectiva.uy/en-perspectiva-programa/titulares/noticias-del-martes-1-de-abril-de-2025/</a>
         </div>
 
         <div class="noticia">
