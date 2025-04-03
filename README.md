@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Derecho y CS - Uruguay 2025</title>
+    <title>Todo Lo Que Quieras Saber</title>
     <style>
         /* Estilos básicos */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f5f5f5;
+            background: #f9f9f9;
             color: #333;
         }
         header {
@@ -20,45 +19,61 @@
             padding: 20px 0;
             text-align: center;
         }
-        nav {
-            background: #34495e;
-            padding: 10px 0;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
+        header h1 {
             margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+        .search-container {
             display: flex;
             justify-content: center;
+            align-items: center;
+            margin: 20px 0;
         }
-        nav li {
-            margin: 0 15px;
+        .search-container input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 1.2em;
+            border: 2px solid #34495e;
+            border-radius: 5px 0 0 5px;
         }
-        nav a {
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background: #34495e;
             color: white;
-            text-decoration: none;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
         }
-        .container {
+        .search-container button:hover {
+            background: #2c3e50;
+        }
+        .results {
             max-width: 1200px;
             margin: 20px auto;
             padding: 0 20px;
         }
-        .materias-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .materia-card {
+        .result-item {
             background: white;
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .materia-card:hover {
-            transform: scale(1.05);
+        .result-item h3 {
+            margin: 0 0 10px;
+            color: #2c3e50;
+        }
+        .result-item p {
+            line-height: 1.6;
+        }
+        .result-item .source {
+            font-size: 0.9em;
+            color: #777;
         }
         footer {
             background: #2c3e50;
@@ -67,144 +82,87 @@
             padding: 20px 0;
             margin-top: 30px;
         }
-        @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav li {
-                margin: 5px 0;
-            }
-        }
-
-        /* Estilos para las unidades */
-        .unidad {
-            margin-top: 40px;
-        }
-        .unidad h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        .tema {
-            margin-bottom: 20px;
-        }
-        .tema h4 {
-            color: #34495e;
-            margin-bottom: 5px;
-        }
-        .tema p {
-            line-height: 1.6;
-        }
-        .fuente {
-            font-size: 0.9em;
-            color: #777;
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Bachillerato Derecho y Ciencias Sociales</h1>
-        <p>Recursos educativos 2025 - Uruguay</p>
+        <h1>Todo Lo Que Quieras Saber</h1>
+        <p>Información verificada y confiable</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#materias">Materias</a></li>
-            <li><a href="mailto:juangabrielsilvera00@gmail.com">Contacto</a></li>
-        </ul>
-    </nav>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Escribe lo que quieres saber...">
+        <button onclick="buscar()">Buscar</button>
+    </div>
 
-    <div class="container">
-        <!-- Sección de Materias -->
-        <h2 id="materias">Materias (6° año)</h2>
-        <div class="materias-grid">
-            <a href="#derecho" class="materia-card">
-                <h3>Derecho y Ciencia Política</h3>
-                <p>6° año</p>
-            </a>
-            <a href="#filosofia" class="materia-card">
-                <h3>Filosofía y Crítica</h3>
-                <p>6° año</p>
-            </a>
-            <a href="#historia" class="materia-card">
-                <h3>Historia</h3>
-                <p>6° año</p>
-            </a>
-        </div>
-
-        <!-- Contenido detallado de las materias -->
-        <div id="derecho" class="unidad">
-            <h2>Derecho y Ciencia Política</h2>
-            <div class="tema">
-                <h4>Unidad 1: Introducción al Derecho</h4>
-                <p>Concepto y naturaleza del derecho, fuentes del derecho, principios generales.</p>
-                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.anep.edu.uy" target="_blank">ANEP</a></p>
-            </div>
-            <div class="tema">
-                <h4>Unidad 2: Sistema Político Uruguayo</h4>
-                <p>Constitución Nacional, división de poderes, partidos políticos.</p>
-                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.biblioteca.ceibal.edu.uy" target="_blank">Biblioteca Ceibal</a></p>
-            </div>
-            <div class="tema">
-                <h4>Unidad 3: Derechos Humanos</h4>
-                <p>Declaración Universal de Derechos Humanos, protección internacional, casos prácticos.</p>
-                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ohchr.org" target="_blank">ONU Derechos Humanos</a></p>
-            </div>
-            <div class="tema">
-                <h4>Unidad 4: Derecho Penal</h4>
-                <p>Principios del derecho penal, tipos de delitos y penas, proceso penal en Uruguay.</p>
-                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.mju.gub.uy" target="_blank">Ministerio de Justicia</a></p>
-            </div>
-        </div>
-
-        <div id="filosofia" class="unidad">
-            <h2>Filosofía y Crítica</h2>
-            <div class="tema">
-                <h4>Unidad 1: Introducción a la Filosofía</h4>
-                <p>Orígenes de la filosofía, ramas de la filosofía, pensamiento crítico.</p>
-                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.filosofia.org" target="_blank">Filosofía.org</a></p>
-            </div>
-            <div class="tema">
-                <h4>Unidad 2: Ética y Moral</h4>
-                <p>Teorías éticas, conflictos morales, aplicaciones prácticas.</p>
-                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.etica.com" target="_blank">Ética y Moral</a></p>
-            </div>
-            <div class="tema">
-                <h4>Unidad 3: Filosofía Política</h4>
-                <p>Contrato social, democracia, filosofía política contemporánea.</p>
-                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.politica.org" target="_blank">Filosofía Política</a></p>
-            </div>
-            <div class="tema">
-                <h4>Unidad 4: Filosofía de la Ciencia</h4>
-                <p>Método científico, paradigmas científicos, crítica a la ciencia moderna.</p>
-                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ciencia.org" target="_blank">Filosofía de la Ciencia</a></p>
-            </div>
-        </div>
-
-        <div id="historia" class="unidad">
-            <h2>Historia</h2>
-            <div class="tema">
-                <h4>Unidad 1: Historia Universal</h4>
-                <p>Revolución Industrial, Guerras Mundiales, Guerra Fría.</p>
-                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.historiauniversal.com" target="_blank">Historia Universal</a></p>
-            </div>
-            <div class="tema">
-                <h4>Unidad 2: Historia del Uruguay</h4>
-                <p>Independencia, Batlle y Ordóñez, dictaduras y democracia.</p>
-                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.mec.gub.uy" target="_blank">Ministerio de Educación y Cultura</a></p>
-            </div>
-            <div class="tema">
-                <h4>Unidad 3: Historia Contemporánea</h4>
-                <p>Globalización, movimientos sociales, crisis económicas y políticas recientes.</p>
-                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.historiacontemporanea.org" target="_blank">Historia Contemporánea</a></p>
-            </div>
-        </div>
+    <div class="results" id="results">
+        <!-- Los resultados aparecerán aquí -->
     </div>
 
     <footer>
-        <p>Contacto: <a href="mailto:juangabrielsilvera00@gmail.com" style="color: #3498db;">juangabrielsilvera00@gmail.com</a></p>
-        <p>© 2025 Recursos Educativos - Uruguay</p>
+        <p>Contacto: <a href="mailto:info@todoquesabes.com" style="color: #3498db;">info@todoquesabes.com</a></p>
+        <p>© 2025 Todo Lo Que Quieras Saber</p>
     </footer>
+
+    <script>
+        // Simulación de una base de datos con información verificada
+        const database = [
+            {
+                titulo: "¿Es cierto que el cambio climático afecta a los océanos?",
+                contenido: "Sí, el cambio climático provoca el aumento del nivel del mar, la acidificación de los océanos y cambios en los patrones de corrientes marinas.",
+                fuente: "https://www.ipcc.ch"
+            },
+            {
+                titulo: "¿La vacuna contra el COVID-19 contiene microchips?",
+                contenido: "No, esta afirmación es falsa. Las vacunas contra el COVID-19 están compuestas principalmente de componentes biológicos y no contienen microchips.",
+                fuente: "https://www.who.int"
+            },
+            {
+                titulo: "¿El agua hierve a 100°C en cualquier lugar?",
+                contenido: "No, el punto de ebullición del agua depende de la presión atmosférica. A mayor altitud, el agua hierve a temperaturas más bajas.",
+                fuente: "https://www.science.org"
+            },
+            {
+                titulo: "¿Es seguro usar contraseñas comunes?",
+                contenido: "No, las contraseñas comunes son fáciles de adivinar. Usa contraseñas únicas y complejas para proteger tus cuentas.",
+                fuente: "https://nordpass.com"
+            },
+            {
+                titulo: "¿Qué es Mattermost?",
+                contenido: "Mattermost es una solución de código abierto para la comunicación en equipo, con funciones de recuperación de información integradas.",
+                fuente: "https://mattermost.com"
+            }
+        ];
+
+        function buscar() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const resultsContainer = document.getElementById("results");
+            resultsContainer.innerHTML = ""; // Limpiar resultados anteriores
+
+            if (query.trim() === "") {
+                resultsContainer.innerHTML = "<p>Por favor, escribe algo en el campo de búsqueda.</p>";
+                return;
+            }
+
+            const resultadosFiltrados = database.filter(item => 
+                item.titulo.toLowerCase().includes(query) || item.contenido.toLowerCase().includes(query)
+            );
+
+            if (resultadosFiltrados.length > 0) {
+                resultadosFiltrados.forEach(item => {
+                    const resultItem = document.createElement("div");
+                    resultItem.classList.add("result-item");
+                    resultItem.innerHTML = `
+                        <h3>${item.titulo}</h3>
+                        <p>${item.contenido}</p>
+                        <p class="source"><strong>Fuente:</strong> <a href="${item.fuente}" target="_blank">${item.fuente}</a></p>
+                    `;
+                    resultsContainer.appendChild(resultItem);
+                });
+            } else {
+                resultsContainer.innerHTML = "<p>No se encontraron resultados para tu búsqueda.</p>";
+            }
+        }
+    </script>
 </body>
 </html>
