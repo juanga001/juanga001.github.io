@@ -1,57 +1,125 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Todo lo que pueda interesarte aquí</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+title: "Un paso adelante"
+description: "Recursos para estudiantes de 6º de Derecho en Uruguay"
+baseurl: ""
+url: "https://tuusuario.github.io"
+github_username: "tuusuario"
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-        }
+# Configuración de Jekyll
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-search
 
-        h1 {
-            margin: 0;
-        }
+# Configuración de la paginación
+paginate: 5
+paginate_path: "/page:num/"
 
-        #contenido {
-            padding: 20px;
-        }
+# Configuración de Disqus para comentarios
+disqus:
+  shortname: "tublog"
 
-        .noticia {
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
+# Datos de contacto
+contact:
+  email: "juangabrielsilvera00@gmail.com"
 
-        .noticia img {
-            max-width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Todo lo que pueda interesarte aquí</h1>
-    </header>
+# Estructura del blog
+collections:
+  materias:
+    output: true
+    permalink: "/materias/:name/"
+  unidades:
+    output: true
+    permalink: "/unidades/:name/"
+  temas:
+    output: true
+    permalink: "/temas/:name/"
 
-    <div id="contenido">
-        <div class="noticia">
-            <h2>Nueva noticia</h2>
-            <p>Esta es una noticia importante que quiero compartir con ustedes.</p>
-        
-            <ahttps://enperspectiva.uy/en-perspectiva-programa/titulares/noticias-del-martes-1-de-abril-de-2025/</a>
-        </div>
+# Barra de búsqueda
+search: true
 
-        <div class="noticia">
-            <h2>Otra noticia</h2>
-            <p>Aquí hay otra noticia interesante.</p>
-            <img src="imagenes/otra-imagen.jpg" alt="Otra imagen">
-        </div>
-    </div>
-</body>
-</html>
+# Archivos y diseño
+include:
+  - _layouts
+  - _includes
+  - assets
+
+# Página principal (index.html)
+---
+layout: default
+title: Inicio
+---
+
+<h1>Bienvenidos a Un paso adelante</h1>
+<p>Aquí encontrarás toda la información relevante para estudiantes de 6º de Derecho en Uruguay.</p>
+<input type="text" id="search" placeholder="Buscar temas...">
+<div id="results"></div>
+
+<h2>Materias</h2>
+<ul>
+  {% for materia in site.materias %}
+    <li><a href="{{ materia.url }}">{{ materia.title }}</a></li>
+  {% endfor %}
+</ul>
+
+# Plantilla para publicaciones (_layouts/post.html)
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+<img src="{{ page.image }}" alt="{{ page.title }}">
+<p>{{ page.description }}</p>
+<div>{{ content }}</div>
+
+<h3>Fuentes y Documentos</h3>
+<ul>
+  {% for fuente in page.fuentes %}
+    <li><a href="{{ fuente.link }}">{{ fuente.nombre }}</a></li>
+  {% endfor %}
+</ul>
+
+<h3>Comentarios</h3>
+{% if site.disqus.shortname %}
+  {% include disqus_comments.html %}
+{% endif %}
+
+# Barra de búsqueda (_includes/search.html)
+<script>
+document.getElementById("search").addEventListener("keyup", function() {
+  let query = this.value.toLowerCase();
+  let results = document.getElementById("results");
+  results.innerHTML = "";
+  site.temas.forEach(function(tema) {
+    if (tema.title.toLowerCase().includes(query)) {
+      let item = document.createElement("div");
+      item.innerHTML = `<a href="${tema.url}">${tema.title}</a>`;
+      results.appendChild(item);
+    }
+  });
+});
+</script>
+
+# Ejemplo de publicación (_temas/batllismo.md)
+---
+title: "El Batllismo"
+image: "/assets/images/batllismo.jpg"
+description: "Explicación sobre el Batllismo en la historia de Uruguay."
+fuentes:
+  - nombre: "Historia del Uruguay"
+    link: "https://historiauruguay.com"
+  - nombre: "Documento PDF"
+    link: "/assets/docs/batllismo.pdf"
+---
+
+<p>El Batllismo fue una corriente política liderada por José Batlle y Ordóñez...</p>
+
+# Contacto (contacto.md)
+---
+title: "Contacto"
+---
+<h1>Contacto</h1>
+<p>Si necesitás información, escribime a <a href="mailto:juangabrielsilvera00@gmail.com">juangabrielsilvera00@gmail.com</a></p>
