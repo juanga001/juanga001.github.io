@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mi Blog</title>
+    <title>Mi página de noticias</title>
     <style>
-        body { font-family: sans-serif; }
-        .post { border: 1px solid #ccc; margin-bottom: 20px; padding: 10px; }
-        .comment { border-top: 1px solid #eee; margin-top: 10px; padding-top: 10px; }
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #contenido {
+            padding: 20px;
+        }
+
+        .noticia {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .noticia img {
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
-    <h1>Mi Blog Personal</h1>
+    <header>
+        <h1>Mi página de noticias miamortati</h1>
+    </header>
 
-    <div id="posts">
-        <div class="post">
-            <h2>Título del Primer Post</h2>
-            <p>Contenido del primer post...</p>
-            <div class="comments">
-                <h3>Comentarios</h3>
-                <div class="comment">
-                    <p>Usuario: ¡Excelente post!</p>
-                </div>
-            </div>
+    <div id="contenido">
+        <div class="noticia">
+            <h2>Nueva noticia</h2>
+            <p>Esta es una noticia importante que quiero compartir con ustedes.</p>
+            <img src="imagenes/imagen-de-la-noticia.jpg" alt="Imagen de la noticia">
+            <a href="documento.pdf">Descargar documento</a>
         </div>
 
-        <div class="post">
-            <h2>Título del Segundo Post</h2>
-            <p>Contenido del segundo post...</p>
-            <div class="comments">
-                <h3>Comentarios</h3>
-                <div class="comment">
-                    <p>Usuario: ¡Muy interesante!</p>
-                </div>
-            </div>
+        <div class="noticia">
+            <h2>Otra noticia</h2>
+            <p>Aquí hay otra noticia interesante.</p>
+            <img src="imagenes/otra-imagen.jpg" alt="Otra imagen">
         </div>
     </div>
-
-    <script>
-        // Aquí puedes agregar JavaScript para interactividad
-    </script>
 </body>
 </html>
