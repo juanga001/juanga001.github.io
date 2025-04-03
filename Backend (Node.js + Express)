@@ -1,0 +1,66 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const app = express();
+const port = 3000;
+
+// Conectar a MongoDB
+mongoose.connect('mongodb://localhost:27017/foro-anonimo', { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Definir esquemas
+const userSchema = new mongoose.Schema({
+    username: String,
+    password: String
+});
+
+const postSchema = new mongoose.Schema({
+    author: String,
+    message: String,
+    timestamp: { type: Date, default: Date.now }
+});
+
+// Crear modelos
+const User = mongoose.model('User', userSchema);
+const Post = mongoose.model('Post', postSchema);
+
+// Middleware
+app.use(bodyParser.json());
+
+// Ruta para registrar usuarios
+app.post('/register', async (req, res) => {
+    const { username, password } = req.body;
+    try {
+        const newUser = new User({ username, password });
+        await newUser.save();
+        res.status(201).json({ message: 'Usuario registrado con éxito' });
+    } catch (error) {
+        res.status(500).json({ error: 'Error al registrar usuario' });
+    }
+});
+
+// Ruta para publicar mensajes
+app.post('/post', async (req, res) => {
+    const { author, message } = req.body;
+    try {
+        const newPost = new Post({ author, message });
+        await newPost.save();
+        res.status(201).json({ message: 'Mensaje publicado con éxito' });
+    } catch (error) {
+        res.status(500).json({ error: 'Error al publicar mensaje' });
+    }
+});
+
+// Ruta para obtener todos los mensajes
+app.get('/posts', async (req, res) => {
+    try {
+        const posts = await Post.find().sort({ timestamp: -1 });
+        res.json(posts);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al cargar mensajes' });
+    }
+});
+
+// Iniciar servidor
+app.listen(port, () => {
+    console.log(`Servidor corriendo en http://localhost:${port}`);
+});
