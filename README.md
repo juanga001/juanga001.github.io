@@ -88,11 +88,11 @@
     </nav>
 
     <div class="container">
-        <h2 id="materias">Materias</h2>
+        <h2 id="materias">Materias (6° año)</h2>
         <div class="materias-grid">
             <a href="materias/derecho.html" class="materia-card">
                 <h3>Derecho y Ciencia Política</h3>
-                <p>5° y 6° año</p>
+                <p>6° año</p>
             </a>
             <a href="materias/administracion.html" class="materia-card">
                 <h3>Administración y Contabilidad</h3>
@@ -100,7 +100,7 @@
             </a>
             <a href="materias/filosofia.html" class="materia-card">
                 <h3>Filosofía y Crítica</h3>
-                <p>5° año</p>
+                <p>6° año</p>
             </a>
             <a href="materias/metodologia.html" class="materia-card">
                 <h3>Metodología de Investigación</h3>
@@ -108,23 +108,23 @@
             </a>
             <a href="materias/economia.html" class="materia-card">
                 <h3>Economía y Educación Financiera</h3>
-                <p>5° año</p>
+                <p>6° año</p>
             </a>
             <a href="materias/literatura.html" class="materia-card">
                 <h3>Literatura</h3>
-                <p>5° año</p>
+                <p>6° año</p>
             </a>
             <a href="materias/historia.html" class="materia-card">
                 <h3>Historia</h3>
-                <p>5° y 6° año</p>
+                <p>6° año</p>
             </a>
             <a href="materias/ingles.html" class="materia-card">
                 <h3>Inglés</h3>
-                <p>5° año</p>
+                <p>6° año</p>
             </a>
             <a href="materias/matematica.html" class="materia-card">
                 <h3>Matemática CSHI</h3>
-                <p>5° año</p>
+                <p>6° año</p>
             </a>
         </div>
     </div>
