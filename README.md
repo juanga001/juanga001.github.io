@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verifica Todo</title>
+    <title>Foro Anónimo</title>
     <style>
-        /* Estilos básicos */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -23,185 +22,123 @@
             margin: 0;
             font-size: 2.5em;
         }
-        header p {
-            font-size: 1.2em;
-            margin-top: 5px;
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .search-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
+        form {
+            margin-bottom: 20px;
         }
-        .search-container input[type="text"] {
-            width: 60%;
+        input, textarea, button {
+            width: 100%;
             padding: 10px;
-            font-size: 1.2em;
-            border: 2px solid #34495e;
-            border-radius: 5px 0 0 5px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
         }
-        .search-container button {
-            padding: 10px 20px;
-            font-size: 1.2em;
+        button {
             background: #34495e;
             color: white;
             border: none;
-            border-radius: 0 5px 5px 0;
             cursor: pointer;
         }
-        .search-container button:hover {
+        button:hover {
             background: #2c3e50;
         }
-        .results {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .result-item {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .result-item h3 {
-            margin: 0 0 10px;
-            color: #2c3e50;
-        }
-        .result-item p {
-            line-height: 1.6;
-        }
-        .result-item .source {
-            font-size: 0.9em;
-            color: #777;
-        }
-        .verification-status {
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 5px 10px;
+        .post {
+            background: #f1f1f1;
+            padding: 15px;
+            margin-bottom: 10px;
             border-radius: 5px;
-            display: inline-block;
         }
-        .verified {
-            background: #d4edda;
-            color: #155724;
+        .post p {
+            margin: 0;
         }
-        .fake {
-            background: #f8d7da;
-            color: #721c24;
-        }
-        .unconfirmed {
-            background: #fff3cd;
-            color: #856404;
+        .post .author {
+            font-weight: bold;
+            color: #34495e;
         }
         footer {
-            background: #2c3e50;
-            color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 30px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Verifica Todo</h1>
-        <p>Información verificada y confiable</p>
+        <h1>Foro Anónimo</h1>
     </header>
 
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Escribe lo que quieres verificar...">
-        <button onclick="buscar()">Buscar</button>
-    </div>
+    <div class="container">
+        <h2>Publica un mensaje</h2>
+        <form id="postForm">
+            <input type="text" id="username" placeholder="Tu nombre (opcional)" />
+            <textarea id="message" placeholder="Escribe tu mensaje..." required></textarea>
+            <label>
+                <input type="checkbox" id="anonymous" /> Publicar de forma anónima
+            </label>
+            <button type="submit">Publicar</button>
+        </form>
 
-    <div class="results" id="results">
-        <!-- Los resultados aparecerán aquí -->
+        <h2>Mensajes</h2>
+        <div id="posts"></div>
     </div>
 
     <footer>
-        <p>Contacto: <a href="mailto:info@verificatodo.com" style="color: #3498db;">info@verificatodo.com</a></p>
-        <p>© 2025 Verifica Todo</p>
+        © 2025 Foro Anónimo
     </footer>
 
     <script>
-        // Base de datos simulada con afirmaciones verificadas
-        const database = [
-            {
-                titulo: "¿Es cierto que el cambio climático afecta a los océanos?",
-                contenido: "Sí, el cambio climático provoca el aumento del nivel del mar, la acidificación de los océanos y cambios en los patrones de corrientes marinas.",
-                fuente: "https://www.ipcc.ch",
-                estado: "verificado"
-            },
-            {
-                titulo: "¿La vacuna contra el COVID-19 contiene microchips?",
-                contenido: "No, esta afirmación es falsa. Las vacunas contra el COVID-19 están compuestas principalmente de componentes biológicos y no contienen microchips.",
-                fuente: "https://www.who.int",
-                estado: "falso"
-            },
-            {
-                titulo: "¿El agua hierve a 100°C en cualquier lugar?",
-                contenido: "No, el punto de ebullición del agua depende de la presión atmosférica. A mayor altitud, el agua hierve a temperaturas más bajas.",
-                fuente: "https://www.science.org",
-                estado: "verificado"
-            },
-            {
-                titulo: "¿Es seguro usar contraseñas comunes?",
-                contenido: "No, las contraseñas comunes son fáciles de adivinar. Usa contraseñas únicas y complejas para proteger tus cuentas.",
-                fuente: "https://nordpass.com",
-                estado: "verificado"
-            },
-            {
-                titulo: "¿Qué es Mattermost?",
-                contenido: "Mattermost es una solución de código abierto para la comunicación en equipo, con funciones de recuperación de información integradas.",
-                fuente: "https://mattermost.com",
-                estado: "sin confirmar"
-            }
-        ];
+        // Simulación de publicaciones (en un proyecto real, esto vendría de una base de datos)
+        let posts = [];
 
-        function buscar() {
-            const query = document.getElementById("searchInput").value.toLowerCase();
-            const resultsContainer = document.getElementById("results");
-            resultsContainer.innerHTML = ""; // Limpiar resultados anteriores
+        const postForm = document.getElementById('postForm');
+        const postsContainer = document.getElementById('posts');
 
-            if (query.trim() === "") {
-                resultsContainer.innerHTML = "<p>Por favor, escribe algo en el campo de búsqueda.</p>";
-                return;
-            }
+        postForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-            const resultadosFiltrados = database.filter(item => 
-                item.titulo.toLowerCase().includes(query) || item.contenido.toLowerCase().includes(query)
-            );
+            const username = document.getElementById('username').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const anonymous = document.getElementById('anonymous').checked;
 
-            if (resultadosFiltrados.length > 0) {
-                resultadosFiltrados.forEach(item => {
-                    const resultItem = document.createElement("div");
-                    resultItem.classList.add("result-item");
-                    let statusClass = "";
-                    let statusText = "";
+            if (!message) return;
 
-                    if (item.estado === "verificado") {
-                        statusClass = "verified";
-                        statusText = "Verificado como verdadero";
-                    } else if (item.estado === "falso") {
-                        statusClass = "fake";
-                        statusText = "Falso";
-                    } else if (item.estado === "sin confirmar") {
-                        statusClass = "unconfirmed";
-                        statusText = "Sin confirmar";
-                    }
+            const author = anonymous ? 'Anónimo' : username || 'Usuario sin nombre';
+            const newPost = { author, message, timestamp: new Date().toLocaleString() };
 
-                    resultItem.innerHTML = `
-                        <h3>${item.titulo}</h3>
-                        <p>${item.contenido}</p>
-                        <p class="source"><strong>Fuente:</strong> <a href="${item.fuente}" target="_blank">${item.fuente}</a></p>
-                        <p><span class="verification-status ${statusClass}">${statusText}</span></p>
-                    `;
-                    resultsContainer.appendChild(resultItem);
-                });
-            } else {
-                resultsContainer.innerHTML = "<p>No se encontraron resultados para tu búsqueda.</p>";
-            }
+            // Agregar el mensaje al array (en un proyecto real, enviarías esto al backend)
+            posts.push(newPost);
+
+            // Limpiar el formulario
+            postForm.reset();
+
+            // Actualizar la lista de mensajes
+            renderPosts();
+        });
+
+        function renderPosts() {
+            postsContainer.innerHTML = '';
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.classList.add('post');
+                postElement.innerHTML = `
+                    <p><span class="author">${post.author}</span> (${post.timestamp})</p>
+                    <p>${post.message}</p>
+                `;
+                postsContainer.appendChild(postElement);
+            });
         }
+
+        // Cargar mensajes iniciales
+        renderPosts();
     </script>
 </body>
 </html>
