@@ -122,12 +122,36 @@
                 <h3>Derecho y Ciencia Política</h3>
                 <p>6° año</p>
             </a>
+            <a href="#administracion" class="materia-card">
+                <h3>Administración y Contabilidad</h3>
+                <p>6° año</p>
+            </a>
             <a href="#filosofia" class="materia-card">
                 <h3>Filosofía y Crítica</h3>
                 <p>6° año</p>
             </a>
             <a href="#metodologia" class="materia-card">
                 <h3>Metodología de Investigación</h3>
+                <p>6° año</p>
+            </a>
+            <a href="#economia" class="materia-card">
+                <h3>Economía y Educación Financiera</h3>
+                <p>6° año</p>
+            </a>
+            <a href="#literatura" class="materia-card">
+                <h3>Literatura</h3>
+                <p>6° año</p>
+            </a>
+            <a href="#historia" class="materia-card">
+                <h3>Historia</h3>
+                <p>6° año</p>
+            </a>
+            <a href="#ingles" class="materia-card">
+                <h3>Inglés</h3>
+                <p>6° año</p>
+            </a>
+            <a href="#matematica" class="materia-card">
+                <h3>Matemática CSHI</h3>
                 <p>6° año</p>
             </a>
         </div>
@@ -137,15 +161,27 @@
             <h2>Derecho y Ciencia Política</h2>
             <div class="tema">
                 <h4>Unidad 1: Introducción al Derecho</h4>
-                <p>En esta unidad, se estudian los conceptos fundamentales del derecho, su evolución histórica y su relación con la sociedad.</p>
-                <p><strong>Temas:</strong> Concepto de derecho, fuentes del derecho, principios generales.</p>
+                <p>Conceptos básicos del derecho, fuentes del derecho, principios generales.</p>
                 <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/derecho" target="_blank">https://www.ejemplo.com/derecho</a></p>
             </div>
             <div class="tema">
                 <h4>Unidad 2: Sistema Político Uruguayo</h4>
-                <p>Se analiza la estructura del sistema político uruguayo, incluyendo el Poder Ejecutivo, Legislativo y Judicial.</p>
-                <p><strong>Temas:</strong> Constitución Nacional, división de poderes, partidos políticos.</p>
+                <p>Constitución Nacional, división de poderes, partidos políticos.</p>
                 <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/politica" target="_blank">https://www.ejemplo.com/politica</a></p>
+            </div>
+        </div>
+
+        <div id="administracion" class="unidad">
+            <h2>Administración y Contabilidad</h2>
+            <div class="tema">
+                <h4>Unidad 1: Fundamentos de la Administración</h4>
+                <p>Teorías administrativas, funciones administrativas, planificación estratégica.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/administracion" target="_blank">https://www.ejemplo.com/administracion</a></p>
+            </div>
+            <div class="tema">
+                <h4>Unidad 2: Introducción a la Contabilidad</h4>
+                <p>Principios contables, registros contables, estados financieros.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/contabilidad" target="_blank">https://www.ejemplo.com/contabilidad</a></p>
             </div>
         </div>
 
@@ -153,14 +189,12 @@
             <h2>Filosofía y Crítica</h2>
             <div class="tema">
                 <h4>Unidad 1: Introducción a la Filosofía</h4>
-                <p>Esta unidad explora los orígenes de la filosofía, sus principales corrientes y su importancia en la reflexión crítica.</p>
-                <p><strong>Temas:</strong> Filosofía antigua, ética, lógica.</p>
+                <p>Orígenes de la filosofía, ética, lógica.</p>
                 <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/filosofia" target="_blank">https://www.ejemplo.com/filosofia</a></p>
             </div>
             <div class="tema">
                 <h4>Unidad 2: Pensamiento Crítico</h4>
-                <p>Se enfatiza en el desarrollo de habilidades para el análisis crítico de ideas y argumentos.</p>
-                <p><strong>Temas:</strong> Falacias lógicas, razonamiento deductivo e inductivo.</p>
+                <p>Falacias lógicas, razonamiento deductivo e inductivo.</p>
                 <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/critica" target="_blank">https://www.ejemplo.com/critica</a></p>
             </div>
         </div>
@@ -169,15 +203,83 @@
             <h2>Metodología de Investigación</h2>
             <div class="tema">
                 <h4>Unidad 1: Fundamentos de la Investigación</h4>
-                <p>Introducción a los métodos y técnicas utilizados en la investigación científica y social.</p>
-                <p><strong>Temas:</strong> Tipos de investigación, diseño metodológico, recolección de datos.</p>
+                <p>Tipos de investigación, diseño metodológico, recolección de datos.</p>
                 <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/metodologia" target="_blank">https://www.ejemplo.com/metodologia</a></p>
             </div>
             <div class="tema">
                 <h4>Unidad 2: Análisis de Datos</h4>
-                <p>Se enseñan herramientas para el análisis cuantitativo y cualitativo de datos.</p>
-                <p><strong>Temas:</strong> Herramientas estadísticas, interpretación de resultados.</p>
+                <p>Herramientas estadísticas, interpretación de resultados.</p>
                 <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/analisis" target="_blank">https://www.ejemplo.com/analisis</a></p>
+            </div>
+        </div>
+
+        <div id="economia" class="unidad">
+            <h2>Economía y Educación Financiera</h2>
+            <div class="tema">
+                <h4>Unidad 1: Conceptos Básicos de Economía</h4>
+                <p>Oferta y demanda, sistemas económicos, globalización.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/economia" target="_blank">https://www.ejemplo.com/economia</a></p>
+            </div>
+            <div class="tema">
+                <h4>Unidad 2: Educación Financiera</h4>
+                <p>Ahorro, inversión, presupuesto familiar.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/finanzas" target="_blank">https://www.ejemplo.com/finanzas</a></p>
+            </div>
+        </div>
+
+        <div id="literatura" class="unidad">
+            <h2>Literatura</h2>
+            <div class="tema">
+                <h4>Unidad 1: Movimientos Literarios</h4>
+                <p>Realismo, modernismo, vanguardismo.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/literatura" target="_blank">https://www.ejemplo.com/literatura</a></p>
+            </div>
+            <div class="tema">
+                <h4>Unidad 2: Análisis de Obras Clásicas</h4>
+                <p>Obras destacadas de la literatura universal y uruguaya.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/clasicos" target="_blank">https://www.ejemplo.com/clasicos</a></p>
+            </div>
+        </div>
+
+        <div id="historia" class="unidad">
+            <h2>Historia</h2>
+            <div class="tema">
+                <h4>Unidad 1: Historia Universal</h4>
+                <p>Revolución Industrial, Guerras Mundiales, Guerra Fría.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/historia-universal" target="_blank">https://www.ejemplo.com/historia-universal</a></p>
+            </div>
+            <div class="tema">
+                <h4>Unidad 2: Historia del Uruguay</h4>
+                <p>Independencia, Batlle y Ordóñez, dictaduras y democracia.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/historia-uruguay" target="_blank">https://www.ejemplo.com/historia-uruguay</a></p>
+            </div>
+        </div>
+
+        <div id="ingles" class="unidad">
+            <h2>Inglés</h2>
+            <div class="tema">
+                <h4>Unidad 1: Gramática y Vocabulario</h4>
+                <p>Tiempos verbales, preposiciones, vocabulario básico.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/ingles" target="_blank">https://www.ejemplo.com/ingles</a></p>
+            </div>
+            <div class="tema">
+                <h4>Unidad 2: Comprensión Oral y Escrita</h4>
+                <p>Escucha activa, lectura crítica, interpretación de textos.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/comprension" target="_blank">https://www.ejemplo.com/comprension</a></p>
+            </div>
+        </div>
+
+        <div id="matematica" class="unidad">
+            <h2>Matemática CSHI</h2>
+            <div class="tema">
+                <h4>Unidad 1: Álgebra y Funciones</h4>
+                <p>Ecuaciones, inecuaciones, funciones lineales y cuadráticas.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/algebra" target="_blank">https://www.ejemplo.com/algebra</a></p>
+            </div>
+            <div class="tema">
+                <h4>Unidad 2: Estadística y Probabilidades</h4>
+                <p>Medidas de tendencia central, probabilidades básicas.</p>
+                <p class="fuente"><strong>Fuente:</strong> <a href="https://www.ejemplo.com/estadistica" target="_blank">https://www.ejemplo.com/estadistica</a></p>
             </div>
         </div>
     </div>
